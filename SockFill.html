@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+   <script>
+     let enter = button => button.classList.toggle("bg-dark");
+     let leave = button => button.classList.toggle("bg-dark");
+     function addBag() {
+        var lot = document.getElementById('lot').value;
+        var batch = document.getElementById('batch').value;
+        google.script.run.sockFillAddBag(lot,batch);
+     }
+   </script>
+   <style>
+     .bg-midnight { background:midnightblue; color:white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+     }
+     .bg-dark { background-color:darkblue; 
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+     }
+     .button {
+       background-color: green;
+       color: white;
+       padding: 10px;
+       border: none;
+       border-radius: 5px;
+    } 
+   </style>
+  </head>
+  <body>
+    <h2>Production Logger</h2>
+    <h1>Sock Fill</h1>
+    <p>
+      Lot#: 
+      <input type="text" id="lot">
+    </p>
+    <p>
+      Batch#: 
+     <input type="text" id="batch">
+    </p>
+    <hr>
+    Start Timer to record time to fill all socks:
+    <p>
+      <input type="button" class="button" value="Start Timer" onclick="google.script.run.showSockFill();">
+    </p>
+    <p>
+      Input weight(g) for each bag: 
+      <input type="text" id="weight">
+      <input type="button" class="button" value="Enter" onclick="google.script.run.sockFillAddBag();">
+    </p>
+  <br>
+    <p>
+       <input type="button" class="bg-midnight"
+          onclick="google.script.run.showMain();"
+          onmouseenter="enter(this);"
+          onmouseleave="leave(this);"
+          value= "Back">
+          
+   </p>
+   <hr>
+  </body>
+</html>

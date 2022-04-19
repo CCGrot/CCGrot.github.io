@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+  <head>
+    <base target="_top">
+   <script>
+     let enter = button => button.classList.toggle("bg-dark");
+     let leave = button => button.classList.toggle("bg-dark");
+     function displayAlert() {
+       alert('The spreadsheet was reset successfully.');
+     }
+   </script>
+   <style>
+     .bg-midnight { background:midnightblue; color:white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+     }
+     .bg-dark { background-color:darkblue; 
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+     }
+    .button {
+      background-color: #6d9eeb;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    h1 {
+      background-color: midnightblue;
+      color: white;
+      target: center
+    }
+    h2 {
+      background-color: aliceblue;
+      color: black;
+    }
+    body {
+      background-color: aliceblue;
+      color: black;
+    }
+   </style>
+  </head>
+  <body>
+    <h2>Production Logger</h2>
+    <h1>Main Menu</h1>
+    <h3>Select a Process:</h3>
+    
+    <center>
+      <input type="button"
+        class="bg-midnight"
+        onclick="window.location.href = 'SockFill.html'"
+        onmouseenter="enter(this);"
+        onmouseleave="leave(this);"
+        value= "Sock Fill">
+
+      <input type="button"
+        class="bg-midnight"
+        onclick="google.script.run.showExtraction();"
+        onmouseenter="enter(this);"
+        onmouseleave="leave(this);"
+        value= "Extraction">
+    </center>
+
+    <br>
+
+    <center>
+      <input type="button"
+        class="bg-midnight"
+        onclick="google.script.run.showDistillation();;"
+        onmouseenter="enter(this);"
+        onmouseleave="leave(this);"
+        value= "Distillation">
+
+      <input type="button"
+        class="bg-midnight"
+        onclick="google.script.run.showIsolation();"
+        onmouseenter="enter(this);"
+        onmouseleave="leave(this);"
+        value= "Isolation">
+    </center>
+
+   <hr>
+  </body>
+</html>
